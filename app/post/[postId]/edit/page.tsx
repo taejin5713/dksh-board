@@ -12,8 +12,7 @@ if (!post){
     return notFound()
 }
 
-const onSubmit =async(data:FormData)=>{
-    "use server"
+const onSubmit =async(data:FormData)=>{ 
     data.set('id',postId)
     await updatePost(data)
 alert('성공적으로 제출되었습니다')
