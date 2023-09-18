@@ -2,7 +2,7 @@ import { db } from "@/lib/db"
 import { notFound } from "next/navigation"
 import { updatePost } from "./update-post"
 
-const EditPage =async({params:{postId}})=>{   
+const EditPage =async({params:{postId}}:{params:{postId:string}})=>{   
     const post = await db.post.findUnique({
     where: {
         id: parseInt(postId)
