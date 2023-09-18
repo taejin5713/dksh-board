@@ -2,7 +2,7 @@ import { db } from "@/lib/db"
 import Link from "next/link"
 import {notFound} from 'next/navigation'
 
-const PostPage = async({ params: { postId } }) => {
+const PostPage = async({ params: { postId } }:{params:{postId:string}}) => {
     const post = await db.post.findUnique({
         where: {
             id: parseInt(postId)
